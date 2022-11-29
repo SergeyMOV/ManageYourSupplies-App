@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     }
     .progressmain{
     position:absolute;
-    left:8%;
+    left:12%;
     top:271px;
     transform:rotate(-90deg);
     }

@@ -20,11 +20,9 @@ const GlobalStyles = createGlobalStyle`
     }
     .progressmain{
     position:absolute;
-    left:50%;
-    right:50%;
+    left:8%;
+    top:271px;
     transform:rotate(-90deg);
-    width:322px;
-    height:600px;
     }
     .MoneyInput{
     width:150px;

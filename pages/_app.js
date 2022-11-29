@@ -1,15 +1,14 @@
 import GlobalStyles from "../styles/GlobalStyles";
-import Header from "../pages/Header";
-import Entryfield from "../pages/Input with Start button"
-import Progress from "../pages/ProgressBar"
+import Header from "../components/Header";
 
-function MyApp() {
+
+function MyApp({Component, pageProps}) {
   return (
     <>
       <GlobalStyles />
-      <Header/>
-      <Entryfield/>
-      <Progress/>
+      <Header />
+      <Component {...pageProps} />
+      
     </>
   );
 }

@@ -8,11 +8,10 @@ export default function Entryfield() {
   );
 }
 
-const Styledbutton= styled.button`
-height:30px;
-`
+const Styledbutton = styled.button`
+  height: 30px;
+`;
 const Inputfield = styled.input`
-width:150px;
-height:30px;
-`
-
+  width: 150px;
+  height: 30px;
+`;

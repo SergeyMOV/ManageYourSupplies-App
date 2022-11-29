@@ -5,7 +5,6 @@ export default function Header() {
 }
 
 const Head = styled.h1`
-    border: 1px solid;
-    text-align:center;
-    
-`
+  border: 1px solid;
+  text-align: center;
+`;

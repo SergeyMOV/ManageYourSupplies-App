@@ -1,4 +1,4 @@
-import Entryfield from "../components/Input with Start button";
+import Entryfield from "../components/Entryfield";
 import Progress from "../components/ProgressBar";
 export default function Home() {
   return (

@@ -39,15 +39,17 @@ const GlobalStyles = createGlobalStyle`
     }
     .Procentage{
     transform:rotate(90deg);
-    text-align:right;
+    position:absolute;
+    top:48%;
+    left:50%;
     margin:0;
-    padding-right:40px;
     }
     .Procentage2{
         transform:rotate(90deg);
-        text-align:right;
+        position:absolute;
         margin:0;
-        padding-right:0px;
+        top:47%;
+        left:40%;
         }
 `;
 

@@ -1,3 +1,10 @@
+import Entryfield from "../components/Entryfield";
+import Progress from "../components/ProgressBar";
 export default function Home() {
-  return <h1>Willkommen zum 🐙-Capstone-Template!</h1>;
+  return (
+    <>
+      <Entryfield />
+      <Progress />
+    </>
+  );
 }

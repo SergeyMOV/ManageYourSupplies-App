@@ -3,13 +3,11 @@ import Home from "../pages/index";
 import "@testing-library/jest-dom";
 
 describe("Home", () => {
-  it("renders an octopus", () => {
+  it("renders a progressbar", () => {
     render(<Home />);
 
-    const heading = screen.getByRole("heading", {
-      name: /🐙/i,
-    });
+    const progressbar = screen.getByRole("progressbar");
 
-    expect(heading).toBeInTheDocument();
+    expect(progressbar).toBeInTheDocument();
   });
 });

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 import styled from "styled-components";
 import {GiPayMoney} from "react-icons/gi";
 import {GiAchievement} from "react-icons/gi";

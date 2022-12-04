@@ -8,26 +8,33 @@ import {useState} from "react";
 
 export default function Home() {
   const [budget, setBudget] = useState(0);
-  const [percentage,setPercentage] = useState(0);
+  const [percentage, setPercentage] = useState(0);
   const [progress, setProgress] = useState(0);
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
-  function handlePrecent(newPercentage){
+  function handlePrecent(newPercentage) {
     setPercentage(newPercentage);
   }
-  function handleProgress(newProgress){
+  function handleProgress(newProgress) {
     setProgress(newProgress);
   }
-  
+
   return (
     <>
       <Header />
-      <Entryfield progress={progress} budget={budget} percentage={percentage} onChangeBudget={handleChangeBudget} onChangePercent={handlePrecent} onChangeProgress={handleProgress}  />
+      <Entryfield
+        progress={progress}
+        budget={budget}
+        percentage={percentage}
+        onChangeBudget={handleChangeBudget}
+        onChangePercent={handlePrecent}
+        onChangeProgress={handleProgress}
+      />
       <Navmenu />
       <Valuefields />
       <Progress progress={progress} percentage={percentage} budget={budget} />
-      <Valueinfo  budget={budget}/>
+      <Valueinfo budget={budget} />
     </>
   );
 }

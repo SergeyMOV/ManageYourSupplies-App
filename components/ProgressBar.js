@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export default function Progress({budget,percentage,progress}) {
+export default function Progress({budget, percentage, progress}) {
   return (
     <Progressmain className="progressmain">
       <Procentage1 className="Procentage">
-        {percentage}<span>%</span>
+        {percentage}
+        <span>%</span>
       </Procentage1>
       <Procentage2 className="Procentage2">
         {budget}
@@ -24,8 +25,8 @@ const Progressmain = styled.div`
 const Procentage1 = styled.p`
   transform: rotate(90deg);
   position: absolute;
-  width:42px;
-  text-align:center;
+  width: 42px;
+  text-align: center;
   top: 48%;
   left: 48%;
   margin: 0;

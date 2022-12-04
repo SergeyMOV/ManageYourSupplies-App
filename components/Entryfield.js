@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import React, {useState} from "react";
-export default function Entryfield({budget,onChangeBudget,percent,onChangePercent,progress,onChangeProgress}) {
+export default function Entryfield({
+  budget,
+  onChangeBudget,
+  percent,
+  onChangePercent,
+  progress,
+  onChangeProgress,
+}) {
   const [currentValue, setCurrentValue] = useState(budget);
   const [percentage, setPercentage] = useState(percent);
   const [progressvalue, setProgressvalue] = useState(progress);
@@ -8,8 +15,8 @@ export default function Entryfield({budget,onChangeBudget,percent,onChangePercen
   function handleSubmit(event) {
     event.preventDefault();
     onChangeBudget(Number(currentValue));
-    onChangePercent((percentage));
-    onChangeProgress((progressvalue));
+    onChangePercent(percentage);
+    onChangeProgress(progressvalue);
   }
 
   return (

@@ -11,7 +11,7 @@ export default function Header() {
         height="100"
         alt={"ManageYourSupplies"}
       ></Head>
-      <Bild
+      <Img
         src={ManageYourSuppliesTitle}
         width="260"
         alt={"ManageYourSuppliesTitle"}
@@ -23,7 +23,7 @@ export default function Header() {
 const Head = styled(Image)`
   height: 10em;
 `;
-const Bild = styled(Image)`
+const Img = styled(Image)`
   background-color: white;
 `;
 const Header1 = styled.header`

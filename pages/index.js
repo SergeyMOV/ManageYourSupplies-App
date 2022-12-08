@@ -1,6 +1,6 @@
 import Entryfield from "../components/Entryfield";
 import Progress from "../components/ProgressBar";
-import Valuefields from "../components/In&OutputFields";
+import Valuefields from "../components/InOutputFields";
 import Navmenu from "../components/Navbar";
 import Valueinfo from "../components/Valueinfofields";
 import Header from "../components/Header";
@@ -18,20 +18,19 @@ export default function Home() {
   function handlePrecent(newPercentage) {
     setPercentage(newPercentage);
   }
-
   function handleProgress(newProgress) {
     setProgress(newProgress);
   }
-  function handleaddvalue() {
+  function handleAddValue() {
     setAddvalue(addvalue => addvalue + 50);
   }
-  function handlesubtractvalue() {
+  function handleSubtractValue() {
     setAddvalue(addvalue => addvalue - 50);
   }
-  function handleaddvalue1() {
+  function handleAddValue1() {
     setAddvalue(addvalue => addvalue - 100);
   }
-  function handlesubtractvalues() {
+  function handleSubtractValues() {
     setAddvalue(addvalue => addvalue + 100);
   }
   return (
@@ -48,10 +47,10 @@ export default function Home() {
       <Navmenu />
       <Valuefields
         addvalue={addvalue}
-        handlesubtractvalues={handlesubtractvalues}
-        onChangeSubtract={handlesubtractvalue}
-        onChangeValue={handleaddvalue}
-        handleaddvalue1={handleaddvalue1}
+        handlesubtractvalues={handleSubtractValues}
+        onChangeSubtract={handleSubtractValue}
+        onChangeValue={handleAddValue}
+        handleaddvalue1={handleAddValue1}
       />
       <Progress
         addvalue={addvalue}

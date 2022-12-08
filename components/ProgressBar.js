@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export default function Progress({budget, percentage, progress, addvalue}) {
   const managepercentage = percentage;
-  const addFunf = budget + addvalue + "€";
+  const addFive = budget + addvalue + "€";
   const Budget = budget + "€";
   return (
     <Progressmain className="progressmain">
       <Procentage1 value={managepercentage + "%"} />
-      <Procentage2 value={Budget && addFunf} readonly />
+      <Procentage2 value={Budget && addFive} readonly />
       <Progressbar value={progress} max="100"></Progressbar>
     </Progressmain>
   );

@@ -6,8 +6,8 @@ export default function Valuefields({
   onChangeValue,
   subtractvalue,
   onChangeSubtract,
-  handleaddvalue1,
-  handlesubtractvalues,
+  handleAddValue1,
+  handleSubtractValues,
 }) {
   const [addvalue, setAddvalue] = useState(addingvalue);
   const [minusvalue, setMinusvalue] = useState(subtractvalue);
@@ -26,8 +26,8 @@ export default function Valuefields({
     <Buttonsection>
       <button onClick={Addvalue}>+50€</button>
       <button onClick={Subtractvalue}>-50€</button>
-      <button onClick={handlesubtractvalues}>+100€</button>
-      <button onClick={handleaddvalue1}>-100€</button>
+      <button onClick={handleSubtractValues}>+100€</button>
+      <button onClick={handleAddValue1}>-100€</button>
     </Buttonsection>
   );
 }

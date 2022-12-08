@@ -24,11 +24,10 @@ const Valuefields = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 376px;
+  height: 12em;
 
   p {
-    margin: 0;
     border-bottom: 1px solid;
-    width: 170px;
+    width: 10.5em;
   }
 `;

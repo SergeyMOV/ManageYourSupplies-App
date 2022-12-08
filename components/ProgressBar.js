@@ -1,47 +1,52 @@
 import styled from "styled-components";
 
-export default function Progress({budget, percentage, progress}) {
+export default function Progress({budget, percentage, progress, addvalue}) {
+  const managepercentage = percentage;
+  const addFunf = budget + addvalue + "€";
+  // const minFunf = budget - minValue + "€"
+  const Budget = budget + "€";
   return (
     <Progressmain className="progressmain">
-      <Procentage1 className="Procentage">
-        {percentage}
-        <span>%</span>
-      </Procentage1>
-      <Procentage2 className="Procentage2">
-        {budget}
-        <span>€</span>
-      </Procentage2>
+      <Procentage1 value={managepercentage + "%"} />
+      <Procentage2 value={Budget && addFunf} readonly />
       <Progressbar value={progress} max="100"></Progressbar>
     </Progressmain>
   );
 }
 
 const Progressmain = styled.div`
-  position: absolute;
-  left: 11%;
-  top: 297px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 8.9em;
   transform: rotate(-90deg);
 `;
-const Procentage1 = styled.p`
+const Procentage1 = styled.input`
   transform: rotate(90deg);
   position: absolute;
-  width: 42px;
+  width: 3.2em;
+  font-size: 1em;
+  background: none;
+  border: none;
   text-align: center;
   top: 48%;
-  left: 48%;
+  left: 57%;
   margin: 0;
 `;
-const Procentage2 = styled.p`
+const Procentage2 = styled.input`
   transform: rotate(90deg);
-  width: 53px;
+  width: 15%;
   text-align: center;
   position: absolute;
+  font-size: 16px;
+  background: none;
+  border: none;
   margin: 0;
-  top: 47%;
-  left: 38%;
+  top: 46%;
+  left: 49%;
 `;
 const Progressbar = styled.progress`
-  width: 320px;
-  height: 223px;
+  width: 82%;
+  height: 13em;
   color: black;
 `;

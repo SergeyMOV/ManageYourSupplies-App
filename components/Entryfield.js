@@ -37,10 +37,10 @@ export default function Entryfield({
 }
 
 const Styledbutton = styled.button`
-  height: 30px;
+  height: 2.3em;
 `;
 const Inputfield = styled.input`
-  margin-top: 20px;
+  margin-top: 5%;
   width: 150px;
   height: 30px;
 `;

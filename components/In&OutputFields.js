@@ -1,12 +1,27 @@
+import React, {useState} from "react"
 import styled from "styled-components";
 
-export default function Valuefields() {
+export default function Valuefields({addingvalue,onChangeValue,subtractvalue,onChangeSubtract, handleaddvalue1,handlesubtractvalues}) {
+  const [addvalue,setAddvalue]=useState(addingvalue);
+  const [minusvalue,setMinusvalue]=useState(subtractvalue);
+  
+  function Addvalue(){
+  setAddvalue(0);
+  onChangeValue(addvalue);
+  }
+
+  function Subtractvalue(){
+  setMinusvalue(0);
+  onChangeSubtract(minusvalue);
+  }
+
+
   return (
     <Buttonsection>
-      <button>+50€</button>
-      <button>-50€</button>
-      <button>+100€</button>
-      <button>-100€</button>
+      <button onClick={Addvalue}>+50€</button>
+      <button onClick={Subtractvalue}>-50€</button>
+      <button onClick={handlesubtractvalues}>+100€</button>
+      <button onClick={handleaddvalue1}>-100€</button>
     </Buttonsection>
   );
 }
@@ -14,9 +29,9 @@ export default function Valuefields() {
 const Buttonsection = styled.div`
   display: flex;
   flex-direction: column;
-  height: 115px;
+  height: 8em;
   justify-content: center;
   button {
-    width: 60px;
+    width: 15%;
   }
 `;

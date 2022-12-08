@@ -1,14 +1,17 @@
 import styled from "styled-components";
-export default function Progress() {
+
+export default function Progress({budget, percentage, progress}) {
   return (
     <Progressmain className="progressmain">
       <Procentage1 className="Procentage">
-        0<span>%</span>
+        {percentage}
+        <span>%</span>
       </Procentage1>
       <Procentage2 className="Procentage2">
-        0<span>€</span>
+        {budget}
+        <span>€</span>
       </Procentage2>
-      <Progressbar value="0" max="100"></Progressbar>
+      <Progressbar value={progress} max="100"></Progressbar>
     </Progressmain>
   );
 }
@@ -16,19 +19,21 @@ export default function Progress() {
 const Progressmain = styled.div`
   position: absolute;
   left: 11%;
-  top: 271px;
+  top: 297px;
   transform: rotate(-90deg);
 `;
 const Procentage1 = styled.p`
   transform: rotate(90deg);
   position: absolute;
+  width: 42px;
+  text-align: center;
   top: 48%;
-  left: 50%;
+  left: 48%;
   margin: 0;
 `;
 const Procentage2 = styled.p`
   transform: rotate(90deg);
-  width: 40px;
+  width: 53px;
   text-align: center;
   position: absolute;
   margin: 0;

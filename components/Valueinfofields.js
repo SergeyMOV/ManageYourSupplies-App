@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export default function Valueinfo() {
+export default function Valueinfo({budget}) {
   return (
     <Valuefields>
       <p>
-        Initial Value &nbsp;&nbsp;&nbsp;&nbsp;= <span>0</span>
+        Initial Value &nbsp;&nbsp;&nbsp;&nbsp;= <span>{budget}</span>
         <span>€</span>
       </p>
       <p>
@@ -23,10 +23,8 @@ export default function Valueinfo() {
 const Valuefields = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 110px;
-  position: absolute;
-  top: 574px;
+  justify-content: flex-end;
+  height: 376px;
 
   p {
     margin: 0;

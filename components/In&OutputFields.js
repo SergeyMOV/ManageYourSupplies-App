@@ -12,9 +12,10 @@ export default function Valuefields() {
 }
 
 const Buttonsection = styled.div`
-  position: absolute;
-  top: 35%;
-  width: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  justify-content: center;
   button {
     width: 60px;
   }

@@ -2,24 +2,36 @@ import styled from "styled-components";
 import {GiPayMoney} from "react-icons/gi";
 import {GiAchievement} from "react-icons/gi";
 import {FaLightbulb} from "react-icons/fa";
+import Link from "next/link";
 
 export default function Navmenu() {
   return (
     <Navbar>
       <li>
-        <Link href="/Page2">
-          <GiPayMoney /> <span className="Expenditure">Expenditure</span>
-        </Link>
+        <Styledbutton>
+          <GiPayMoney />
+          <Link className="Expenditure" href="/ExpenditurePage">
+            {" "}
+            All Expenditures
+          </Link>
+        </Styledbutton>
       </li>
       <li>
-        <Link href="/Page3">
+        <Styledbutton>
           <GiAchievement />
-        </Link>
+          <Link className="Expenditure" href="#">
+            {" "}
+            Achievements
+          </Link>
+        </Styledbutton>
       </li>
       <li>
-        <Lamplink href="/Page4">
+        <Lampbutton>
           <FaLightbulb />
-        </Lamplink>
+          <Link className="Expenditure" href="#">
+            Tips & Guidance
+          </Link>
+        </Lampbutton>
       </li>
     </Navbar>
   );
@@ -31,41 +43,46 @@ const Navbar = styled.nav`
   list-style-type: none;
   li {
     float: right;
-    border: 1px solid;
     border-right: none;
+    border: 1px solid;
     border-radius: 10px 10px;
-  }
-  span {
-    font-size: 20px;
-    display: none;
+    border-right: none;
   }
 `;
-const Link = styled.a`
-text-decoration:none;
-    color:#214D9E
-    cursor:pointer;
-    width:40px;
-    font-size:40px;
-    transition:1s;
-    :visited{
-      color:#214D9E;
-      transition:1s;
-    }
-    :focus{
-    color:#FFC25F;
-    padding-right:7px;
-    }
-`;
-
-const Lamplink = styled.a`
+const Styledbutton = styled.button`
   text-decoration: none;
   color: #214d9e;
-  cursor: pointer;
-  width: 40px;
-  font-size: 40px;
-  transition: 1s;
-  :focus {
-    padding-right: 7px;
-    color: #ffc25f;
+  font-size: 35px;
+  border-radius: 10px 10px;
+  border-right: none;
+  .Expenditure {
+    display: none;
+    font-size: 20px;
+    text-decoration: none;
+    color: #214d9e;
+  }
+  :hover {
+    .Expenditure {
+      display: inline;
+    }
+  }
+`;
+
+const Lampbutton = styled.button`
+  text-decoration: none;
+  color: #214d9e;
+  border-radius: 10px 10px;
+  border-right: none;
+  font-size: 35px;
+  .Expenditure {
+    display: none;
+    text-decoration: none;
+    color: #214d9e;
+    font-size: 20px;
+  }
+  :hover {
+    .Expenditure {
+      display: inline;
+    }
   }
 `;

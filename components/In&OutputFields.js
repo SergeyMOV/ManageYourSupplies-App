@@ -1,20 +1,26 @@
-import React, {useState} from "react"
+import React, {useState} from "react";
 import styled from "styled-components";
 
-export default function Valuefields({addingvalue,onChangeValue,subtractvalue,onChangeSubtract, handleaddvalue1,handlesubtractvalues}) {
-  const [addvalue,setAddvalue]=useState(addingvalue);
-  const [minusvalue,setMinusvalue]=useState(subtractvalue);
-  
-  function Addvalue(){
-  setAddvalue(0);
-  onChangeValue(addvalue);
+export default function Valuefields({
+  addingvalue,
+  onChangeValue,
+  subtractvalue,
+  onChangeSubtract,
+  handleaddvalue1,
+  handlesubtractvalues,
+}) {
+  const [addvalue, setAddvalue] = useState(addingvalue);
+  const [minusvalue, setMinusvalue] = useState(subtractvalue);
+
+  function Addvalue() {
+    setAddvalue(0);
+    onChangeValue(addvalue);
   }
 
-  function Subtractvalue(){
-  setMinusvalue(0);
-  onChangeSubtract(minusvalue);
+  function Subtractvalue() {
+    setMinusvalue(0);
+    onChangeSubtract(minusvalue);
   }
-
 
   return (
     <Buttonsection>

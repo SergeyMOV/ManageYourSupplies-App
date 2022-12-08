@@ -18,7 +18,7 @@ const Header1 = styled.h1`
   .Homebutton {
     position: absolute;
     left: 0;
-    top:2.5em;
+    top: 2.5em;
     ext-decoration: none;
     color: #214d9e;
     cursor: pointer;

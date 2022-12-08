@@ -51,7 +51,7 @@ const Navbar = styled.nav`
 `;
 const Styledbutton = styled.button`
   text-decoration: none;
-  color: #005B8D;
+  color: #005b8d;
   font-size: 2.2em;
   border-radius: 10px 10px;
   border-right: none;
@@ -59,8 +59,7 @@ const Styledbutton = styled.button`
     display: none;
     font-size: 0.6em;
     text-decoration: none;
-    color: #005B8D;
-
+    color: #005b8d;
   }
   :hover {
     .Expenditure {
@@ -71,15 +70,15 @@ const Styledbutton = styled.button`
 
 const Lampbutton = styled.button`
   text-decoration: none;
-  color: #005B8D;
+  color: #005b8d;
   border-radius: 10px 10px;
   border-right: none;
   font-size: 2.2em;
   .Expenditure {
     display: none;
     text-decoration: none;
-    color: #005B8D;
-    font-size:0.6em;
+    color: #005b8d;
+    font-size: 0.6em;
   }
   :hover {
     .Expenditure {

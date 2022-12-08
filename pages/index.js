@@ -12,7 +12,6 @@ export default function Home() {
   const [percentage, setPercentage] = useState(0);
   const [progress, setProgress] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
-  // const [minusvalue,setMinusvalue] = useState(0);
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
@@ -27,11 +26,9 @@ export default function Home() {
     setAddvalue(addvalue => addvalue + 50);
   }
   function handlesubtractvalue() {
-    // setMinusvalue(minusvalue => minusvalue - 50);
     setAddvalue(addvalue => addvalue - 50);
   }
   function handleaddvalue1() {
-    // setAddvalue(addvalue => addvalue + 100)
     setAddvalue(addvalue => addvalue - 100);
   }
   function handlesubtractvalues() {

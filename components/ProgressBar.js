@@ -3,7 +3,6 @@ import styled from "styled-components";
 export default function Progress({budget, percentage, progress, addvalue}) {
   const managepercentage = percentage;
   const addFunf = budget + addvalue + "€";
-  // const minFunf = budget - minValue + "€"
   const Budget = budget + "€";
   return (
     <Progressmain className="progressmain">

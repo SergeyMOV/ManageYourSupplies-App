@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export default function Valueinfo({budget}) {
+export default function Valueinfo({budget,addvalue,minusvalue }) {
+  const Adding = budget + addvalue + minusvalue;
+  const Subtract = minusvalue;
   return (
     <Valuefields>
       <p>
@@ -8,12 +10,11 @@ export default function Valueinfo({budget}) {
         <span>€</span>
       </p>
       <p>
-        {" "}
-        Expenditure &nbsp;&nbsp;&nbsp;= <span>0</span>
+        Expenditure &nbsp;&nbsp;&nbsp;= <span>{Subtract}</span>
         <span>€</span>
       </p>
       <p>
-        Current Value = <span>0</span>
+        Saved Value &nbsp; &nbsp;{""}= <span>{budget && Adding}</span>
         <span>€</span>
       </p>
     </Valuefields>
@@ -28,6 +29,6 @@ const Valuefields = styled.section`
 
   p {
     border-bottom: 1px solid;
-    width: 10.5em;
+    width: 11.5em;
   }
 `;

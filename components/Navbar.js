@@ -21,7 +21,7 @@ export default function Navmenu() {
           <GiAchievement />
           <Link className="Expenditure" href="#">
             {" "}
-            Achievements
+            Goals & Achievements
           </Link>
         </Styledbutton>
       </li>

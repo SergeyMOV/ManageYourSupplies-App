@@ -10,7 +10,7 @@ export default function Valueinfo({budget, addvalue, minusvalue}) {
         <span>€</span>
       </p>
       <p>
-        Expenditures &nbsp;&nbsp;&nbsp;= <span>{Subtract}</span>
+        Expenditures &nbsp;&nbsp; &nbsp;= <span>{Subtract}</span>
         <span>€</span>
       </p>
       <p>

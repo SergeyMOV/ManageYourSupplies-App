@@ -6,15 +6,15 @@ export default function Valueinfo({budget, addvalue, minusvalue}) {
   return (
     <Valuefields>
       <p>
-        Initial Value &nbsp;&nbsp;&nbsp;&nbsp;= <span>{budget}</span>
+        Initial Budget &nbsp;&nbsp;&nbsp;&nbsp;= <span>{budget}</span>
         <span>€</span>
       </p>
       <p>
-        Expenditure &nbsp;&nbsp;&nbsp;= <span>{Subtract}</span>
+        Expenditures &nbsp;&nbsp;&nbsp;= <span>{Subtract}</span>
         <span>€</span>
       </p>
       <p>
-        Saved Value &nbsp; &nbsp;{""}= <span>{budget && Adding}</span>
+        Saved Budget &nbsp; &nbsp;{""}= <span>{budget && Adding}</span>
         <span>€</span>
       </p>
     </Valuefields>

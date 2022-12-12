@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Valueinfo({budget,addvalue,minusvalue }) {
+export default function Valueinfo({budget, addvalue, minusvalue}) {
   const Adding = budget + addvalue + minusvalue;
   const Subtract = minusvalue;
   return (

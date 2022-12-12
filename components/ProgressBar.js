@@ -1,18 +1,23 @@
 import styled from "styled-components";
-import {MdOutlineSettingsBackupRestore} from "react-icons/md"
-import {useRef} from 'react';
+import {MdOutlineSettingsBackupRestore} from "react-icons/md";
+import {useRef} from "react";
 
-export default function Progress({budget, percentage, progress, addvalue,minusvalue}) {
+export default function Progress({
+  budget,
+  percentage,
+  progress,
+  addvalue,
+  minusvalue,
+}) {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
 
-    const ref = useRef(null);
-    const ref2 = useRef(null);
-    const ref3 = useRef(null);
-
-    function restoreClick(){
-      ref.current.value = '0€';
-      ref2.current.value = "0%";
-      ref3.current.value = "0"
-    }
+  function restoreClick() {
+    ref.current.value = "0€";
+    ref2.current.value = "0%";
+    ref3.current.value = "0";
+  }
 
   const managepercentage = percentage;
   const addFive = budget + addvalue + minusvalue + "€";
@@ -20,7 +25,7 @@ export default function Progress({budget, percentage, progress, addvalue,minusva
   return (
     <Progressmain className="progressmain">
       <Procentage1 ref={ref2} value={managepercentage + "%"} />
-       <Procentage2 ref={ref} value={Budget && addFive}/>
+      <Procentage2 ref={ref} value={Budget && addFive} />
       <Restorebutton onClick={restoreClick}>
         <MdOutlineSettingsBackupRestore />
       </Restorebutton>
@@ -69,7 +74,7 @@ const Restorebutton = styled.button`
   position: absolute;
   left: 44%;
   top: 31%;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 1.4em;
   background: none;
   border: none;

@@ -12,7 +12,7 @@ export default function Home() {
   const [percentage, setPercentage] = useState(0);
   const [progress, setProgress] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
-  const [minusvalue,setMinusValue] = useState(0);
+  const [minusvalue, setMinusValue] = useState(0);
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
@@ -29,7 +29,7 @@ export default function Home() {
     setMinusValue(minusvalue => minusvalue - 50);
   }
   function handleAddValue1() {
-    setMinusValue(minusvalue => minusvalue- 100);
+    setMinusValue(minusvalue => minusvalue - 100);
   }
   function handleSubtractValues1() {
     setAddvalue(addvalue => addvalue + 100);
@@ -48,7 +48,7 @@ export default function Home() {
       <Navmenu />
       <Valuefields
         addvalue={addvalue}
-        minusvalue ={minusvalue}
+        minusvalue={minusvalue}
         handleSubtractValues={handleSubtractValues1}
         onChangeSubtract={handleSubtractValues}
         onChangeValue={handleAddValue}
@@ -59,9 +59,9 @@ export default function Home() {
         progress={progress}
         percentage={percentage}
         budget={budget}
-        minusvalue ={minusvalue}
+        minusvalue={minusvalue}
       />
-      <Valueinfo minusvalue ={minusvalue} addvalue={addvalue} budget={budget}  />
+      <Valueinfo minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
     </Homepage>
   );
 }

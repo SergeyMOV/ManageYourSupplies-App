@@ -30,7 +30,8 @@ export default function Entryfield({
           setPercentage(100);
           setProgressvalue(100);
         }}
-      placeholder="Type your Startbudget"/>
+        placeholder="Type your Startbudget"
+      />
       <Styledbutton type="submit">Start</Styledbutton>
     </form>
   );

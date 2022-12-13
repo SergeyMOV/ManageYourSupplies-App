@@ -22,17 +22,17 @@ export default function Home() {
   function handleProgress() {
     setProgress(progress => progress + 100);
   }
-  function handleAddValue() {
+  function handleAdd50() {
     setAddvalue(addvalue => addvalue + 50);
   }
-  function handleSubtractValues() {
+  function handleAdd100() {
+    setAddvalue(addvalue => addvalue + 100);
+  }
+  function handleSubtract50() {
     setMinusValue(minusvalue => minusvalue - 50);
   }
-  function handleAddValue1() {
+  function handleSubtract100() {
     setMinusValue(minusvalue => minusvalue - 100);
-  }
-  function handleSubtractValues1() {
-    setAddvalue(addvalue => addvalue + 100);
   }
   return (
     <Homepage>
@@ -49,10 +49,10 @@ export default function Home() {
       <Valuefields
         addvalue={addvalue}
         minusvalue={minusvalue}
-        handleSubtractValues={handleSubtractValues1}
-        onChangeSubtract={handleSubtractValues}
-        onChangeValue={handleAddValue}
-        handleAddValue1={handleAddValue1}
+        handleAdd100={handleAdd100}
+        handleSubtract50={handleSubtract50}
+        handleAdd50={handleAdd50}
+        handleSubtract100={handleSubtract100}
       />
       <Progress
         addvalue={addvalue}
@@ -61,7 +61,7 @@ export default function Home() {
         budget={budget}
         minusvalue={minusvalue}
       />
-      <Valueinfo minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
+      <Valueinfo  minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
     </Homepage>
   );
 }

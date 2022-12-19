@@ -8,11 +8,11 @@ export default function Expenditure() {
       <Link className="Homebutton" href="/">
         <AiTwotoneHome />
       </Link>
-      Detailed Expenditure
+      Detailed Expenditures
     </Header1>
   );
 }
-const Header1 = styled.h1`
+const Header1 = styled.h2`
   border: 1px solid;
   text-align: center;
   .Homebutton {

@@ -33,11 +33,12 @@ export default function Valuefields({
 }
 
 const Buttonsection = styled.div`
+width: 15%;
   display: flex;
   flex-direction: column;
-  height: 8em;
+  height: 9.9em;
   justify-content: center;
   button {
-    width: 15%;
+    width: 100%;
   }
 `;

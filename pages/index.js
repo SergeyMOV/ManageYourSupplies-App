@@ -5,50 +5,59 @@ import Navmenu from "../components/Navbar";
 import Valueinfo from "../components/Valueinfofields";
 import Header from "../components/Header";
 import styled from "styled-components";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 
 export default function Home() {
   const [budget, setBudget] = useState(0);
+  const [reset,setReset] = useState(0);
+  const [currentbudget,setCurrentBudget] = useState(0);
   const [percentage, setPercentage] = useState(0);
-  const [progress, setProgress] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
   const [minusvalue, setMinusValue] = useState(0);
+
+useEffect(()=>{setCurrentBudget( budget + addvalue + minusvalue)}, [addvalue,minusvalue,budget])
+
+useEffect(()=>{if(budget){
+  setPercentage( (Math.round(currentbudget / budget * 100)));
+  
+  }},
+  [budget, currentbudget])
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
-  function handlePrecent(newPercentage) {
-    setPercentage(newPercentage);
-  }
-  function handleProgress() {
-    setProgress(progress => progress + 100);
+  function handlePrecent() {
+    setPercentage(percentage);
   }
   function handleAdd50() {
-    setAddvalue(addvalue => addvalue + 50);
+    setAddvalue(addvalue + 50);
   }
   function handleAdd100() {
-    setAddvalue(addvalue => addvalue + 100);
+    setAddvalue(addvalue + 100);
   }
   function handleSubtract50() {
-    setMinusValue(minusvalue => minusvalue - 50);
+    setMinusValue(minusvalue - 50);
   }
   function handleSubtract100() {
-    setMinusValue(minusvalue => minusvalue - 100);
+    setMinusValue(minusvalue - 100);
+  }
+  function handleReset(){
+    setReset(reset => reset-budget)
+    setPercentage(percentage-percentage)
+    setBudget(budget-budget)
+    setAddvalue(0);
+    setMinusValue(0);
   }
   return (
     <Homepage>
       <Header />
       <Entryfield
-        progress={progress}
         budget={budget}
         percentage={percentage}
         onChangeBudget={handleChangeBudget}
         onChangePercent={handlePrecent}
-        onChangeProgress={handleProgress}
       />
       <Navmenu />
       <Valuefields
-        addvalue={addvalue}
-        minusvalue={minusvalue}
         handleAdd100={handleAdd100}
         handleSubtract50={handleSubtract50}
         handleAdd50={handleAdd50}
@@ -56,12 +65,12 @@ export default function Home() {
       />
       <Progress
         addvalue={addvalue}
-        progress={progress}
         percentage={percentage}
         budget={budget}
         minusvalue={minusvalue}
+        onReset={handleReset}
       />
-      <Valueinfo  minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
+      <Valueinfo reset={reset} minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
     </Homepage>
   );
 }

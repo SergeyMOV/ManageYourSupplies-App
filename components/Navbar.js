@@ -32,8 +32,8 @@ const Navbar = styled.nav`
   flex-direction: column;
   align-items: flex-end;
   list-style-type: none;
-  height:10em;
-  justify-content:center;
+  height: 10em;
+  justify-content: center;
   li {
     float: right;
     border-right: none;
@@ -44,7 +44,7 @@ const Navbar = styled.nav`
 `;
 const Styledbutton = styled.button`
   text-decoration: none;
-  color: #4358FF;
+  color: #4358ff;
   font-size: 2.2em;
   border-radius: 10px 10px;
   border-right: none;
@@ -55,7 +55,7 @@ const Styledbutton = styled.button`
     color: #005b8d;
   }
   :hover {
-    border-radius:5px 5px;
+    border-radius: 5px 5px;
     .Expenditure {
       display: inline;
     }

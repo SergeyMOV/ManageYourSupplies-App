@@ -33,7 +33,7 @@ export default function Valuefields({
 }
 
 const Buttonsection = styled.div`
-width: 15%;
+  width: 15%;
   display: flex;
   flex-direction: column;
   height: 9.9em;

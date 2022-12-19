@@ -5,23 +5,25 @@ import Navmenu from "../components/Navbar";
 import Valueinfo from "../components/Valueinfofields";
 import Header from "../components/Header";
 import styled from "styled-components";
-import {useState,useEffect} from "react";
+import {useState, useEffect} from "react";
 
 export default function Home() {
   const [budget, setBudget] = useState(0);
-  const [reset,setReset] = useState(0);
-  const [currentbudget,setCurrentBudget] = useState(0);
+  const [reset, setReset] = useState(0);
+  const [currentbudget, setCurrentBudget] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
   const [minusvalue, setMinusValue] = useState(0);
 
-useEffect(()=>{setCurrentBudget( budget + addvalue + minusvalue)}, [addvalue,minusvalue,budget])
+  useEffect(() => {
+    setCurrentBudget(budget + addvalue + minusvalue);
+  }, [addvalue, minusvalue, budget]);
 
-useEffect(()=>{if(budget){
-  setPercentage( (Math.round(currentbudget / budget * 100)));
-  
-  }},
-  [budget, currentbudget])
+  useEffect(() => {
+    if (budget) {
+      setPercentage(Math.round((currentbudget / budget) * 100));
+    }
+  }, [budget, currentbudget]);
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
@@ -40,10 +42,10 @@ useEffect(()=>{if(budget){
   function handleSubtract100() {
     setMinusValue(minusvalue - 100);
   }
-  function handleReset(){
-    setReset(reset => reset-budget)
-    setPercentage(percentage-percentage)
-    setBudget(budget-budget)
+  function handleReset() {
+    setReset(reset => reset - budget);
+    setPercentage(percentage - percentage);
+    setBudget(budget - budget);
     setAddvalue(0);
     setMinusValue(0);
   }
@@ -70,7 +72,12 @@ useEffect(()=>{if(budget){
         minusvalue={minusvalue}
         onReset={handleReset}
       />
-      <Valueinfo reset={reset} minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
+      <Valueinfo
+        reset={reset}
+        minusvalue={minusvalue}
+        addvalue={addvalue}
+        budget={budget}
+      />
     </Homepage>
   );
 }

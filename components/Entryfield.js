@@ -13,7 +13,6 @@ export default function Entryfield({
     event.preventDefault();
     onChangeBudget(Number(currentValue));
     onChangePercent(percentage);
-    
   }
 
   return (
@@ -24,7 +23,7 @@ export default function Entryfield({
         max="9000"
         onChange={event => {
           setCurrentValue(event.target.value);
-          setPercentage(0)
+          setPercentage(0);
         }}
         placeholder="Type your Initial Budget"
       />

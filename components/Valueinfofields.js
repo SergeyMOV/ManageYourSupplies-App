@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Valueinfo({budget, addvalue, minusvalue,}) {
+export default function Valueinfo({budget, addvalue, minusvalue}) {
   const Adding = budget + addvalue + minusvalue;
   const Subtract = minusvalue + addvalue;
   return (
@@ -25,7 +25,7 @@ const Valuefields = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height:0em;
+  height: 0em;
 
   p {
     border-bottom: 1px solid;

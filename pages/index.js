@@ -43,7 +43,7 @@ export default function Home() {
     setMinusValue(minusvalue - 100);
   }
   function handleReset() {
-    setReset(reset => reset - budget);
+    setReset(0);
     setPercentage(percentage - percentage);
     setBudget(budget - budget);
     setAddvalue(0);

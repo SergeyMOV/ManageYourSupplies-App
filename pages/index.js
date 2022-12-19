@@ -12,25 +12,26 @@ export default function Home() {
   const [percentage, setPercentage] = useState(0);
   const [progress, setProgress] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
+  const [minusvalue, setMinusValue] = useState(0);
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
   function handlePrecent(newPercentage) {
     setPercentage(newPercentage);
   }
-  function handleProgress(newProgress) {
-    setProgress(newProgress);
+  function handleProgress() {
+    setProgress(progress => progress + 100);
   }
   function handleAddValue() {
     setAddvalue(addvalue => addvalue + 50);
   }
-  function handleSubtractValue() {
-    setAddvalue(addvalue => addvalue - 50);
+  function handleSubtractValues() {
+    setMinusValue(minusvalue => minusvalue - 50);
   }
   function handleAddValue1() {
-    setAddvalue(addvalue => addvalue - 100);
+    setMinusValue(minusvalue => minusvalue - 100);
   }
-  function handleSubtractValues() {
+  function handleSubtractValues1() {
     setAddvalue(addvalue => addvalue + 100);
   }
   return (
@@ -47,18 +48,20 @@ export default function Home() {
       <Navmenu />
       <Valuefields
         addvalue={addvalue}
-        handlesubtractvalues={handleSubtractValues}
-        onChangeSubtract={handleSubtractValue}
+        minusvalue={minusvalue}
+        handleSubtractValues={handleSubtractValues1}
+        onChangeSubtract={handleSubtractValues}
         onChangeValue={handleAddValue}
-        handleaddvalue1={handleAddValue1}
+        handleAddValue1={handleAddValue1}
       />
       <Progress
         addvalue={addvalue}
         progress={progress}
         percentage={percentage}
         budget={budget}
+        minusvalue={minusvalue}
       />
-      <Valueinfo budget={budget} />
+      <Valueinfo minusvalue={minusvalue} addvalue={addvalue} budget={budget} />
     </Homepage>
   );
 }

@@ -1,81 +1,134 @@
 import styled from "styled-components";
-import {MdOutlineSettingsBackupRestore} from "react-icons/md";
-import {useRef} from "react";
-
+import {MdDeleteForever} from "react-icons/md";
+import {RiSave3Fill} from "react-icons/ri";
+import {useState} from "react";
 export default function Progress({
   budget,
-  percentage,
-  progress,
   addvalue,
   minusvalue,
+  percentage,
+  Reset,
+  onReset,
 }) {
-  const ref = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
+  const [reset, setReset] = useState(Reset);
 
-  function restoreClick() {
-    ref.current.value = "0€";
-    ref2.current.value = "0%";
-    ref3.current.value = "0";
+  function resetClick() {
+    setReset(0);
+    onReset(reset);
   }
-
-  const managepercentage = percentage;
+  function saveClick() {}
   const addFive = budget + addvalue + minusvalue + "€";
   const Budget = budget + "€";
+
   return (
     <Progressmain className="progressmain">
-      <Procentage1 ref={ref2} value={managepercentage + "%"} />
-      <Procentage2 ref={ref} value={Budget && addFive} />
-      <Restorebutton onClick={restoreClick}>
-        <MdOutlineSettingsBackupRestore />
-      </Restorebutton>
-      <Progressbar ref={ref3} value={progress} max="100"></Progressbar>
+      <ProgressbarContainer>
+        <Progressbar value={percentage}></Progressbar>
+        <StyledDiv>
+          <ProcentageContainer>
+            <Procentage1 value={`${percentage}%`} />
+            <Procentage2 value={Budget && addFive} />
+          </ProcentageContainer>
+          <ButtonContainer>
+            <Restorebutton onClick={resetClick}>
+              <MdDeleteForever />
+            </Restorebutton>
+            <Savebutton onClick={saveClick}>
+              <RiSave3Fill />
+            </Savebutton>
+          </ButtonContainer>
+        </StyledDiv>
+      </ProgressbarContainer>
     </Progressmain>
   );
 }
 
 const Progressmain = styled.div`
+  position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   align-items: center;
-  height: 8.9em;
-  transform: rotate(-90deg);
+  justify-content: center;
+  width: 55%;
+  top: -10em;
+  margin: 0 auto;
+  height: 50vh;
 `;
 const Procentage1 = styled.input`
-  transform: rotate(90deg);
-  position: absolute;
-  width: 3.2em;
   font-size: 1em;
   background: none;
   border: none;
   text-align: center;
-  top: 48%;
-  left: 57%;
   margin: 0;
+  padding-left: 10px;
 `;
 const Procentage2 = styled.input`
-  transform: rotate(90deg);
-  width: 15%;
   text-align: center;
-  position: absolute;
-  font-size: 16px;
+  font-size: 1em;
+  padding-left: 5px;
   background: none;
   border: none;
   margin: 0;
-  top: 46%;
-  left: 49%;
 `;
-const Progressbar = styled.progress`
-  width: 82%;
-  height: 13em;
-  color: black;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-self: center;
+`;
+
+const ProcentageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ProgressbarContainer = styled.div`
+  width: 50%;
+  border: 13px solid #4358ff;
+  border-radius: 47px 47px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+`;
+
+const Progressbar = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 33px 33px 20px 20px;
+  background-color: #3947ff;
+  z-index: -1;
+  transition: 1s;
+  ${props => `height: ${props.value}%;`}
 `;
 const Restorebutton = styled.button`
-  position: absolute;
-  left: 44%;
-  top: 31%;
   cursor: pointer;
-  font-size: 1.4em;
+  font-size: 1.5em;
   background: none;
   border: none;
+`;
+
+const Savebutton = styled.button`
+  cursor: pointer;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+`;
+
+const StyledDiv = styled.div`
+  position: absolute;
+  bottom: 37%;
+  left: 25%;
+  right: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;

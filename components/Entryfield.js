@@ -5,18 +5,14 @@ export default function Entryfield({
   onChangeBudget,
   percent,
   onChangePercent,
-  progress,
-  onChangeProgress,
 }) {
   const [currentValue, setCurrentValue] = useState(budget);
   const [percentage, setPercentage] = useState(percent);
-  const [progressvalue, setProgressvalue] = useState(progress);
 
   function handleSubmit(event) {
     event.preventDefault();
     onChangeBudget(Number(currentValue));
     onChangePercent(percentage);
-    onChangeProgress(progressvalue);
   }
 
   return (
@@ -27,8 +23,7 @@ export default function Entryfield({
         max="9000"
         onChange={event => {
           setCurrentValue(event.target.value);
-          setPercentage(100);
-          setProgressvalue(100);
+          setPercentage(0);
         }}
         placeholder="Type your Initial Budget"
       />

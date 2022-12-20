@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {GiPayMoney} from "react-icons/gi";
 import {GiAchievement} from "react-icons/gi";
-import {FaLightbulb} from "react-icons/fa";
 import Link from "next/link";
 
 export default function Navmenu() {
@@ -12,7 +11,7 @@ export default function Navmenu() {
           <GiPayMoney />
           <Link className="Expenditure" href="/ExpenditurePage">
             {" "}
-            All Expenditures
+            Detailed Expenditures
           </Link>
         </Styledbutton>
       </li>
@@ -25,14 +24,6 @@ export default function Navmenu() {
           </Link>
         </Styledbutton>
       </li>
-      <li>
-        <Lampbutton>
-          <FaLightbulb />
-          <Link className="Expenditure" href="#">
-            Tips & Guidance
-          </Link>
-        </Lampbutton>
-      </li>
     </Navbar>
   );
 }
@@ -41,6 +32,8 @@ const Navbar = styled.nav`
   flex-direction: column;
   align-items: flex-end;
   list-style-type: none;
+  height: 10em;
+  justify-content: center;
   li {
     float: right;
     border-right: none;
@@ -51,7 +44,7 @@ const Navbar = styled.nav`
 `;
 const Styledbutton = styled.button`
   text-decoration: none;
-  color: #005b8d;
+  color: #4358ff;
   font-size: 2.2em;
   border-radius: 10px 10px;
   border-right: none;
@@ -62,25 +55,7 @@ const Styledbutton = styled.button`
     color: #005b8d;
   }
   :hover {
-    .Expenditure {
-      display: inline;
-    }
-  }
-`;
-
-const Lampbutton = styled.button`
-  text-decoration: none;
-  color: #005b8d;
-  border-radius: 10px 10px;
-  border-right: none;
-  font-size: 2.2em;
-  .Expenditure {
-    display: none;
-    text-decoration: none;
-    color: #005b8d;
-    font-size: 0.6em;
-  }
-  :hover {
+    border-radius: 5px 5px;
     .Expenditure {
       display: inline;
     }

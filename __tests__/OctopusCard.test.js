@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 describe("Valueiinfo", () => {
   it("renders an octopus", () => {
-    render(<Valueinfo/>);
+    render(<Valueinfo />);
 
     const heading = screen.getByTestId("test");
 

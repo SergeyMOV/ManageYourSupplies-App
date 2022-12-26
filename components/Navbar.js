@@ -10,7 +10,6 @@ export default function Navmenu() {
         <Styledbutton>
           <GiPayMoney />
           <Link className="Expenditure" href="/ExpenditurePage">
-            {" "}
             Detailed Expenditures
           </Link>
         </Styledbutton>
@@ -18,8 +17,7 @@ export default function Navmenu() {
       <li>
         <Styledbutton>
           <GiAchievement />
-          <Link className="Expenditure" href="#">
-            {" "}
+          <Link className="Expenditure" href="/AchievementsPage">
             Goals & Achievements
           </Link>
         </Styledbutton>
@@ -48,16 +46,15 @@ const Styledbutton = styled.button`
   font-size: 2.2em;
   border-radius: 10px 10px;
   border-right: none;
+  :hover {
+    .Expenditure {
+      display: inline;
+    }
+  }
   .Expenditure {
     display: none;
     font-size: 0.6em;
     text-decoration: none;
     color: #005b8d;
-  }
-  :hover {
-    border-radius: 5px 5px;
-    .Expenditure {
-      display: inline;
-    }
   }
 `;

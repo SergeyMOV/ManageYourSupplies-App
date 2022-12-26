@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {MdDeleteForever} from "react-icons/md";
 import {RiSave3Fill} from "react-icons/ri";
 import {useState} from "react";
+
 export default function Progress({
   budget,
   addvalue,
@@ -16,27 +17,42 @@ export default function Progress({
     setReset(0);
     onReset(reset);
   }
-  function saveClick() {}
+  function handleSave(e) {
+    e.preventDefault();
+    localStorage.setItem("name", JSON.stringify(savedpercent));
+    localStorage.setItem("budget", JSON.stringify(savedbudget));
+  }
+
   const addFive = budget + addvalue + minusvalue + "€";
   const Budget = budget + "€";
+  const [savedpercent, setSavedPercent] = useState("");
+  const [savedbudget, setSavedBudget] = useState("");
 
   return (
     <Progressmain className="progressmain">
       <ProgressbarContainer>
         <Progressbar value={percentage}></Progressbar>
         <StyledDiv>
-          <ProcentageContainer>
-            <Procentage1 value={`${percentage}%`} />
-            <Procentage2 value={Budget && addFive} />
-          </ProcentageContainer>
-          <ButtonContainer>
-            <Restorebutton onClick={resetClick}>
-              <MdDeleteForever />
-            </Restorebutton>
-            <Savebutton onClick={saveClick}>
-              <RiSave3Fill />
-            </Savebutton>
-          </ButtonContainer>
+          <Form onSubmit={handleSave}>
+            <ProcentageContainer>
+              <Procentage1
+                onChange={e => setSavedPercent(e.target.value)}
+                value={`${percentage}%`}
+              />
+              <Procentage2
+                onChange={e => setSavedBudget(e.target.value)}
+                value={Budget && addFive}
+              />
+            </ProcentageContainer>
+            <ButtonContainer>
+              <Restorebutton onClick={resetClick}>
+                <MdDeleteForever />
+              </Restorebutton>
+              <Savebutton type="submit">
+                <RiSave3Fill />
+              </Savebutton>
+            </ButtonContainer>
+          </Form>
         </StyledDiv>
       </ProgressbarContainer>
     </Progressmain>
@@ -76,6 +92,7 @@ const ButtonContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-self: center;
+  padding-top: 5px;
 `;
 
 const ProcentageContainer = styled.div`
@@ -90,7 +107,7 @@ const ProgressbarContainer = styled.div`
   width: 50%;
   border: 13px solid #4358ff;
   border-radius: 47px 47px;
-  height: 100%;
+  height: 94%;
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
@@ -132,3 +149,4 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
+const Form = styled.form``;

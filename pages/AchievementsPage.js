@@ -5,7 +5,6 @@ import React, {useState} from "react";
 
 export default function Achievements() {
   const [goals, setGoals] = useState("");
-  const [todolist, setTodoList] = useState("");
 
   function handleSetGoals(e) {
     e.preventDefault();

@@ -4,16 +4,26 @@ import Valuefields from "../components/InOutputFields";
 import Navmenu from "../components/Navbar";
 import Valueinfo from "../components/Valueinfofields";
 import Header from "../components/Header";
+import { useLocalStorage } from "../components/useLocalStorage";
 import styled from "styled-components";
 import {useState, useEffect} from "react";
 
 export default function Home() {
-  const [budget, setBudget] = useState(0);
-  const [reset, setReset] = useState(0);
+  const [localstorage, setLocalStorage] = useLocalStorage("budget", 0)
+  const [budget, setBudget] = useState(0)
+  const [reset, setReset] = useState(false);
   const [currentbudget, setCurrentBudget] = useState(0);
   const [percentage, setPercentage] = useState(0);
   const [addvalue, setAddvalue] = useState(0);
   const [minusvalue, setMinusValue] = useState(0);
+  const [change,setChange] = useLocalStorage("spendings",0);
+  const spendings = budget + change;
+  console.log(change)
+  useEffect(() => {
+    if (localstorage || localstorage === 0) {
+      setBudget(localstorage);
+    }
+  }, [localstorage]);
 
   useEffect(() => {
     setCurrentBudget(budget + addvalue + minusvalue);
@@ -21,9 +31,14 @@ export default function Home() {
 
   useEffect(() => {
     if (budget) {
-      setPercentage(Math.round((currentbudget / budget) * 100));
+      setPercentage(Math.round((spendings / budget) * 100));
     }
   }, [budget, currentbudget]);
+  useEffect(()=>{
+    if(minusvalue || addvalue){
+        setChange(minusvalue+addvalue)
+    }
+    },[minusvalue, addvalue,reset])
   function handleChangeBudget(newBudget) {
     setBudget(newBudget);
   }
@@ -44,10 +59,11 @@ export default function Home() {
   }
   function handleReset() {
     setReset(0);
-    setPercentage(percentage - percentage);
-    setBudget(budget - budget);
+    setPercentage(0);
+    setBudget(0);
     setAddvalue(0);
     setMinusValue(0);
+    setLocalStorage(0);
   }
   return (
     <Homepage>
@@ -66,10 +82,12 @@ export default function Home() {
         handleSubtract100={handleSubtract100}
       />
       <Progress
-        addvalue={addvalue}
         percentage={percentage}
         budget={budget}
-        minusvalue={minusvalue}
+        setReset={setReset}
+        reset={reset}
+        spendings={spendings}
+        setChange={setChange}
         onReset={handleReset}
       />
       <Valueinfo

@@ -1,58 +1,66 @@
 import styled from "styled-components";
 import {MdDeleteForever} from "react-icons/md";
 import {RiSave3Fill} from "react-icons/ri";
-import {useState} from "react";
+import {useState,useEffect} from "react";
 
 export default function Progress({
   budget,
-  addvalue,
-  minusvalue,
   percentage,
-  Reset,
+  reset,
+  setReset,
   onReset,
+  spendings,
+  setChange,
+  change,
 }) {
-  const [reset, setReset] = useState(Reset);
-
+  
+  // const [savedpercent, setSavedPercent] = useState("");
+  // const [savedbudget, setSavedBudget] = useState("");
+  
   function resetClick() {
-    setReset(0);
-    onReset(reset);
+    setReset(!reset);
+    setChange(0) 
+    localStorage.setItem("spendings",JSON.stringify(0))
+    // setSavedPercent(0);
+    // setSavedBudget(0);
   }
-  function handleSave(e) {
-    e.preventDefault();
-    localStorage.setItem("name", JSON.stringify(savedpercent));
-    localStorage.setItem("budget", JSON.stringify(savedbudget));
+  function handleSave() {
+    console.log(change)
+   // localStorage.setItem("spendings",JSON.stringify(change));
+    localStorage.setItem("budget", JSON.stringify(budget));
   }
-
-  const addFive = budget + addvalue + minusvalue + "€";
-  const Budget = budget + "€";
-  const [savedpercent, setSavedPercent] = useState("");
-  const [savedbudget, setSavedBudget] = useState("");
-
+  // useEffect(() => {
+  // if(localStorage.getItem("name")){
+  // setSavedPercent(localStorage.getItem("name"))
+  // setSavedBudget(localStorage.getItem("budget"))
+  // }
+  // }, []);
+  
   return (
     <Progressmain className="progressmain">
       <ProgressbarContainer>
         <Progressbar value={percentage}></Progressbar>
         <StyledDiv>
-          <Form onSubmit={handleSave}>
             <ProcentageContainer>
-              <Procentage1
+              {/* <Procentage1
                 onChange={e => setSavedPercent(e.target.value)}
                 value={`${percentage}%`}
               />
               <Procentage2
                 onChange={e => setSavedBudget(e.target.value)}
                 value={Budget && addFive}
-              />
+              /> */}
+              <p>&nbsp;{percentage + "%"}</p>
+              <p>{spendings + "€"}</p>
             </ProcentageContainer>
             <ButtonContainer>
               <Restorebutton onClick={resetClick}>
                 <MdDeleteForever />
               </Restorebutton>
-              <Savebutton type="submit">
+              <Savebutton onClick={handleSave}>
                 <RiSave3Fill />
               </Savebutton>
             </ButtonContainer>
-          </Form>
         </StyledDiv>
       </ProgressbarContainer>
     </Progressmain>
@@ -149,4 +157,4 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Form = styled.form``;
+

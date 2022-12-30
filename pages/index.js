@@ -30,7 +30,12 @@ export default function Home() {
       <Header />
       <Entryfield budget={budget} setBudget={setBudget} />
       <Navmenu />
-      <InOutputFields setChange={setChange} change={change} />
+      <InOutputFields
+        setChange={setChange}
+        change={change}
+        setSavedChanges={setSavedChanges}
+        savedChanges={savedChanges}
+      />
       <Progress
         change={change}
         setBudget={setBudget}

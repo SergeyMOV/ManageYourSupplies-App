@@ -1,101 +1,45 @@
 import Entryfield from "../components/Entryfield";
 import Progress from "../components/ProgressBar";
-import Valuefields from "../components/InOutputFields";
+import InOutputFields from "../components/InOutputFields";
 import Navmenu from "../components/Navbar";
-import Valueinfo from "../components/Valueinfofields";
+import Valueinfofields from "../components/Valueinfofields";
 import Header from "../components/Header";
-import { useLocalStorage } from "../components/useLocalStorage";
+import {useLocalStorage} from "../components/useLocalStorage";
 import styled from "styled-components";
 import {useState, useEffect} from "react";
 
 export default function Home() {
-  const [localstorage, setLocalStorage] = useLocalStorage("budget", 0)
-  const [budget, setBudget] = useState(0)
-  const [reset, setReset] = useState(false);
-  const [currentbudget, setCurrentBudget] = useState(0);
-  const [percentage, setPercentage] = useState(0);
-  const [addvalue, setAddvalue] = useState(0);
-  const [minusvalue, setMinusValue] = useState(0);
-  const [change,setChange] = useLocalStorage("spendings",0);
-  const spendings = budget + change;
-  console.log(change)
-  useEffect(() => {
-    if (localstorage || localstorage === 0) {
-      setBudget(localstorage);
-    }
-  }, [localstorage]);
+  const [savedBudget, setSavedBudget] = useLocalStorage("budget", 0);
+  const [savedChanges, setSavedChanges] = useLocalStorage("changes", 0);
+  const [budget, setBudget] = useState(0);
+  const [change, setChange] = useState(0);
 
   useEffect(() => {
-    setCurrentBudget(budget + addvalue + minusvalue);
-  }, [addvalue, minusvalue, budget]);
-
+    if (savedBudget || savedBudget === 0) {
+      setBudget(savedBudget);
+    }
+  }, [savedBudget]);
   useEffect(() => {
-    if (budget) {
-      setPercentage(Math.round((spendings / budget) * 100));
+    if (savedChanges || savedChanges === 0) {
+      setChange(savedChanges);
     }
-  }, [budget, currentbudget]);
-  useEffect(()=>{
-    if(minusvalue || addvalue){
-        setChange(minusvalue+addvalue)
-    }
-    },[minusvalue, addvalue,reset])
-  function handleChangeBudget(newBudget) {
-    setBudget(newBudget);
-  }
-  function handlePrecent() {
-    setPercentage(percentage);
-  }
-  function handleAdd50() {
-    setAddvalue(addvalue + 50);
-  }
-  function handleAdd100() {
-    setAddvalue(addvalue + 100);
-  }
-  function handleSubtract50() {
-    setMinusValue(minusvalue - 50);
-  }
-  function handleSubtract100() {
-    setMinusValue(minusvalue - 100);
-  }
-  function handleReset() {
-    setReset(0);
-    setPercentage(0);
-    setBudget(0);
-    setAddvalue(0);
-    setMinusValue(0);
-    setLocalStorage(0);
-  }
+  }, [savedChanges]);
+
   return (
     <Homepage>
       <Header />
-      <Entryfield
-        budget={budget}
-        percentage={percentage}
-        onChangeBudget={handleChangeBudget}
-        onChangePercent={handlePrecent}
-      />
+      <Entryfield budget={budget} setBudget={setBudget} />
       <Navmenu />
-      <Valuefields
-        handleAdd100={handleAdd100}
-        handleSubtract50={handleSubtract50}
-        handleAdd50={handleAdd50}
-        handleSubtract100={handleSubtract100}
-      />
+      <InOutputFields setChange={setChange} change={change} />
       <Progress
-        percentage={percentage}
-        budget={budget}
-        setReset={setReset}
-        reset={reset}
-        spendings={spendings}
+        change={change}
+        setBudget={setBudget}
         setChange={setChange}
-        onReset={handleReset}
-      />
-      <Valueinfo
-        reset={reset}
-        minusvalue={minusvalue}
-        addvalue={addvalue}
         budget={budget}
+        setSavedChanges={setSavedChanges}
+        setSavedBudget={setSavedBudget}
       />
+      <Valueinfofields change={change} budget={budget} />
     </Homepage>
   );
 }

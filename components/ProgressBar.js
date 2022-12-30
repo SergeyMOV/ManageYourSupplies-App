@@ -1,66 +1,47 @@
 import styled from "styled-components";
 import {MdDeleteForever} from "react-icons/md";
 import {RiSave3Fill} from "react-icons/ri";
-import {useState,useEffect} from "react";
 
 export default function Progress({
   budget,
-  percentage,
-  reset,
-  setReset,
-  onReset,
-  spendings,
   setChange,
   change,
+  setBudget,
+  setSavedBudget,
+  setSavedChanges,
 }) {
-  
-  // const [savedpercent, setSavedPercent] = useState("");
-  // const [savedbudget, setSavedBudget] = useState("");
-  
+  const percentage =
+    budget !== 0 ? Math.round(((budget + change) / budget) * 100) : 0;
+  const spendings = budget + change;
+
   function resetClick() {
-    setReset(!reset);
-    setChange(0) 
-    localStorage.setItem("spendings",JSON.stringify(0))
-    // setSavedPercent(0);
-    // setSavedBudget(0);
+    setChange(0);
+    setBudget(0);
+    setSavedBudget(0);
+    setSavedChanges(0);
   }
   function handleSave() {
-    console.log(change)
-   // localStorage.setItem("spendings",JSON.stringify(change));
-    localStorage.setItem("budget", JSON.stringify(budget));
+    setSavedBudget(budget);
+    setSavedChanges(change);
   }
-  // useEffect(() => {
-  // if(localStorage.getItem("name")){
-  // setSavedPercent(localStorage.getItem("name"))
-  // setSavedBudget(localStorage.getItem("budget"))
-  // }
-  // }, []);
-  
+
   return (
     <Progressmain className="progressmain">
       <ProgressbarContainer>
         <Progressbar value={percentage}></Progressbar>
         <StyledDiv>
-            <ProcentageContainer>
-              {/* <Procentage1
-                onChange={e => setSavedPercent(e.target.value)}
-                value={`${percentage}%`}
-              />
-              <Procentage2
-                onChange={e => setSavedBudget(e.target.value)}
-                value={Budget && addFive}
-              /> */}
-              <p>&nbsp;{percentage + "%"}</p>
-              <p>{spendings + "€"}</p>
-            </ProcentageContainer>
-            <ButtonContainer>
-              <Restorebutton onClick={resetClick}>
-                <MdDeleteForever />
-              </Restorebutton>
-              <Savebutton onClick={handleSave}>
-                <RiSave3Fill />
-              </Savebutton>
-            </ButtonContainer>
+          <ProcentageContainer>
+            <p>&nbsp;{percentage + "%"}</p>
+            <p>{spendings + "€"}</p>
+          </ProcentageContainer>
+          <ButtonContainer>
+            <Restorebutton onClick={resetClick}>
+              <MdDeleteForever />
+            </Restorebutton>
+            <Savebutton onClick={handleSave}>
+              <RiSave3Fill />
+            </Savebutton>
+          </ButtonContainer>
         </StyledDiv>
       </ProgressbarContainer>
     </Progressmain>
@@ -78,29 +59,13 @@ const Progressmain = styled.div`
   margin: 0 auto;
   height: 50vh;
 `;
-const Procentage1 = styled.input`
-  font-size: 1em;
-  background: none;
-  border: none;
-  text-align: center;
-  margin: 0;
-  padding-left: 10px;
-`;
-const Procentage2 = styled.input`
-  text-align: center;
-  font-size: 1em;
-  padding-left: 5px;
-  background: none;
-  border: none;
-  margin: 0;
-`;
 
 const ButtonContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
   align-self: center;
-  padding-top: 5px;
+  padding-top: 0.5em;
 `;
 
 const ProcentageContainer = styled.div`
@@ -130,7 +95,7 @@ const Progressbar = styled.div`
   border-radius: 33px 33px 20px 20px;
   background-color: #3947ff;
   z-index: -1;
-  transition: 1s;
+  transition: 0.5s linear;
   ${props => `height: ${props.value}%;`}
 `;
 const Restorebutton = styled.button`
@@ -157,4 +122,3 @@ const StyledDiv = styled.div`
   align-items: center;
   justify-content: center;
 `;
-

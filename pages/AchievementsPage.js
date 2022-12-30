@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {AiTwotoneHome} from "react-icons/ai";
 import Link from "next/link";
 import React, {useState} from "react";
-import {HiClipboardList} from "react-icons/hi"
+import {HiClipboardList} from "react-icons/hi";
 
 export default function Achievements() {
   const [goals, setGoals] = useState("");
@@ -34,7 +34,10 @@ export default function Achievements() {
         <Addbutton type="submit">Add Goal</Addbutton>
       </Form>
       <br></br>
-      <SetGoalTitle>Stipulated Goals<GoalListIcon/></SetGoalTitle>
+      <SetGoalTitle>
+        Stipulated Goals
+        <GoalListIcon />
+      </SetGoalTitle>
       <hr></hr>
       <ExistingGoalsList></ExistingGoalsList>
     </>
@@ -64,20 +67,19 @@ letter-spacing:0.1em;
 const Form = styled.form``;
 
 const Goalsfield = styled.input`
-width:50%;
-height:40%;
+  width: 50%;
+  height: 40%;
 `;
 const Addbutton = styled.button``;
 const ExistingGoalsList = styled.div`
   height: auto;
 `;
 const SetGoalTitle = styled.h3`
-display:flex;
-align-items:flex-end;
-justify-content:space-between;
-font-size:1.4em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 1.4em;
 `;
 const GoalListIcon = styled(HiClipboardList)`
-font-size:2em;
-
-`
+  font-size: 2em;
+`;

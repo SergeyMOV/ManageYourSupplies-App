@@ -1,18 +1,11 @@
 import styled from "styled-components";
 import React, {useState} from "react";
-export default function Entryfield({
-  budget,
-  onChangeBudget,
-  percent,
-  onChangePercent,
-}) {
+export default function Entryfield({budget, setBudget}) {
   const [currentValue, setCurrentValue] = useState(budget);
-  const [percentage, setPercentage] = useState(percent);
 
   function handleSubmit(event) {
     event.preventDefault();
-    onChangeBudget(Number(currentValue));
-    onChangePercent(percentage);
+    setBudget(Number(currentValue));
   }
 
   return (
@@ -23,9 +16,8 @@ export default function Entryfield({
         max="9000"
         onChange={event => {
           setCurrentValue(event.target.value);
-          setPercentage(0);
         }}
-        placeholder="Type your Initial Budget"
+        placeholder={budget ? budget : "Type your Initial Budget"}
       />
       <Styledbutton type="submit">Start</Styledbutton>
     </form>

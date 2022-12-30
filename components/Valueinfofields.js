@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
-export default function Valueinfo({budget, addvalue, minusvalue}) {
-  const Adding = budget + addvalue + minusvalue;
-  const Subtract = minusvalue + addvalue;
+export default function Valueinfofields({budget, change}) {
   return (
     <Valuefields>
       <p>
-        Initial Budget &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span> {budget}</span>
+        Initial Budget &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;={" "}
+        <span data-testid="test">{budget}</span>
         <span>€</span>
       </p>
       <p>
-        Expenditures &nbsp;&nbsp; &nbsp;&nbsp;={" "}
-        <span data-testid="test">{Subtract}</span>
+        Expenditures &nbsp;&nbsp;&nbsp; &nbsp;= <span>{change}</span>
         <span>€</span>
       </p>
       <p>
-        Current Budget &nbsp;{""}= <span>{budget && Adding}</span>
+        Current Budget &nbsp;= <span>{budget + change}</span>
         <span>€</span>
       </p>
     </Valuefields>
@@ -27,8 +25,7 @@ const Valuefields = styled.section`
   margin-top: -5.2em;
   flex-direction: column;
   justify-content: flex-end;
-  height: 0em;
-
+  height: 0;
   p {
     border-bottom: 1px solid;
     width: 12.8em;

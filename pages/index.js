@@ -1,83 +1,45 @@
 import Entryfield from "../components/Entryfield";
 import Progress from "../components/ProgressBar";
-import Valuefields from "../components/InOutputFields";
+import InOutputFields from "../components/InOutputFields";
 import Navmenu from "../components/Navbar";
-import Valueinfo from "../components/Valueinfofields";
+import Valueinfofields from "../components/Valueinfofields";
 import Header from "../components/Header";
+import {useLocalStorage} from "../components/useLocalStorage";
 import styled from "styled-components";
 import {useState, useEffect} from "react";
 
 export default function Home() {
+  const [savedBudget, setSavedBudget] = useLocalStorage("budget", 0);
+  const [savedChanges, setSavedChanges] = useLocalStorage("changes", 0);
   const [budget, setBudget] = useState(0);
-  const [reset, setReset] = useState(0);
-  const [currentbudget, setCurrentBudget] = useState(0);
-  const [percentage, setPercentage] = useState(0);
-  const [addvalue, setAddvalue] = useState(0);
-  const [minusvalue, setMinusValue] = useState(0);
+  const [change, setChange] = useState(0);
 
   useEffect(() => {
-    setCurrentBudget(budget + addvalue + minusvalue);
-  }, [addvalue, minusvalue, budget]);
-
-  useEffect(() => {
-    if (budget) {
-      setPercentage(Math.round((currentbudget / budget) * 100));
+    if (savedBudget || savedBudget === 0) {
+      setBudget(savedBudget);
     }
-  }, [budget, currentbudget]);
-  function handleChangeBudget(newBudget) {
-    setBudget(newBudget);
-  }
-  function handlePrecent() {
-    setPercentage(percentage);
-  }
-  function handleAdd50() {
-    setAddvalue(addvalue + 50);
-  }
-  function handleAdd100() {
-    setAddvalue(addvalue + 100);
-  }
-  function handleSubtract50() {
-    setMinusValue(minusvalue - 50);
-  }
-  function handleSubtract100() {
-    setMinusValue(minusvalue - 100);
-  }
-  function handleReset() {
-    setReset(0);
-    setPercentage(percentage - percentage);
-    setBudget(budget - budget);
-    setAddvalue(0);
-    setMinusValue(0);
-  }
+  }, [savedBudget]);
+  useEffect(() => {
+    if (savedChanges || savedChanges === 0) {
+      setChange(savedChanges);
+    }
+  }, [savedChanges]);
+
   return (
     <Homepage>
       <Header />
-      <Entryfield
-        budget={budget}
-        percentage={percentage}
-        onChangeBudget={handleChangeBudget}
-        onChangePercent={handlePrecent}
-      />
+      <Entryfield budget={budget} setBudget={setBudget} />
       <Navmenu />
-      <Valuefields
-        handleAdd100={handleAdd100}
-        handleSubtract50={handleSubtract50}
-        handleAdd50={handleAdd50}
-        handleSubtract100={handleSubtract100}
-      />
+      <InOutputFields setChange={setChange} change={change} />
       <Progress
-        addvalue={addvalue}
-        percentage={percentage}
+        change={change}
+        setBudget={setBudget}
+        setChange={setChange}
         budget={budget}
-        minusvalue={minusvalue}
-        onReset={handleReset}
+        setSavedChanges={setSavedChanges}
+        setSavedBudget={setSavedBudget}
       />
-      <Valueinfo
-        reset={reset}
-        minusvalue={minusvalue}
-        addvalue={addvalue}
-        budget={budget}
-      />
+      <Valueinfofields change={change} budget={budget} />
     </Homepage>
   );
 }

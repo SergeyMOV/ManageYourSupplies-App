@@ -1,10 +1,10 @@
 import {render, screen} from "@testing-library/react";
-import Valueinfo from "../components/Valueinfofields.js";
+import Valueinfofields from "../components/Valueinfofields.js";
 import "@testing-library/jest-dom";
 
-describe("Valueiinfo", () => {
+describe("Valueiinfofields", () => {
   it("renders an octopus", () => {
-    render(<Valueinfo />);
+    render(<Valueinfofields />);
 
     const heading = screen.getByTestId("test");
 

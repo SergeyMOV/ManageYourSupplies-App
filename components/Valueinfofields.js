@@ -24,12 +24,13 @@ export default function Valueinfo({budget, addvalue, minusvalue}) {
 
 const Valuefields = styled.section`
   display: flex;
+  margin-top: -5.2em;
   flex-direction: column;
   justify-content: flex-end;
   height: 0em;
 
   p {
     border-bottom: 1px solid;
-    width: 11.8em;
+    width: 12.8em;
   }
 `;

@@ -7,7 +7,7 @@ import {HiClipboardList} from "react-icons/hi";
 import {Icon} from "@iconify/react";
 import React, {useState, useEffect} from "react";
 import Image from "next/image";
-import Icongoal from "/Users/sm/Desktop/Icongoal.gif";
+import Icongoal from "../public/Images/Icongoal.gif";
 import {useLocalStorage} from "../components/useLocalStorage";
 
 export default function Achievements() {

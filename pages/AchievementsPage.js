@@ -6,6 +6,8 @@ import Goals from "../components/Goals";
 import {HiClipboardList} from "react-icons/hi";
 import {Icon} from "@iconify/react";
 import React, {useState, useEffect} from "react";
+import Image from "next/image";
+import Icongoal from "/Users/sm/Desktop/Icongoal.gif";
 import {useLocalStorage} from "../components/useLocalStorage";
 
 export default function Achievements() {
@@ -67,7 +69,11 @@ export default function Achievements() {
   }
   return (
     <Main>
-      <Header>&nbsp;Goals & Achievements</Header>
+      <Header>
+        <Image src={Icongoal} width={100} height={90} alt="" />
+        Goals & Achievements
+        <Image src={Icongoal} width={100} height={90} alt="" />
+      </Header>
       <br></br>
       <AddGoals Addgoal={Addgoal} />
       <br></br>

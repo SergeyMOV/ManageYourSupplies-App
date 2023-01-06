@@ -22,10 +22,8 @@ export default function Valueinfofields({budget, change}) {
 
 const Valuefields = styled.section`
   display: flex;
-  margin-top: -5.2em;
   flex-direction: column;
   justify-content: flex-end;
-  height: 0;
   p {
     border-bottom: 1px solid;
     width: 12.8em;

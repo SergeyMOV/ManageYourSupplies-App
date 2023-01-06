@@ -55,7 +55,7 @@ const Progressmain = styled.div`
   align-items: center;
   justify-content: center;
   width: 55%;
-  top: -10em;
+  top: -11em;
   margin: 0 auto;
   height: 50vh;
 `;
@@ -78,7 +78,7 @@ const ProcentageContainer = styled.div`
 
 const ProgressbarContainer = styled.div`
   width: 50%;
-  border: 13px solid #4358ff;
+  border: 8px solid #4358ff;
   border-radius: 47px 47px;
   height: 94%;
   margin: 0 auto;
@@ -92,17 +92,41 @@ const Progressbar = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 33px 33px 20px 20px;
-  background-color: #3947ff;
-  z-index: -1;
+  border-radius: 37px 37px;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #cae3ff 0,
+    #6994ff 100%
+  );
   transition: 0.5s linear;
   ${props => `height: ${props.value}%;`}
 `;
 const Restorebutton = styled.button`
-  cursor: pointer;
   font-size: 1.5em;
+  color: #ad3f17;
+  appearance: none;
+  border-radius: 13px 13px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+  margin: 0;
+  outline: none;
+  quotes: auto;
+  text-decoration: none;
+  user-select: none;
   background: none;
-  border: none;
+  transform: scale(1.125);
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  :active {
+    transform: scale(0.9);
+    background-color: #cae3ff;
+    transition: all 0.15s;
+  }
 `;
 
 const Savebutton = styled.button`
@@ -110,6 +134,25 @@ const Savebutton = styled.button`
   font-size: 1.5em;
   background: none;
   border: none;
+  color: #0c3cff;
+  box-sizing: border-box;
+  cursor: pointer;
+  letter-spacing: -0.24px;
+  margin: 0;
+  outline: none;
+  quotes: auto;
+  text-decoration: none;
+
+  user-select: none;
+  background: none;
+  transform: scale(1.125);
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  :active {
+    transform: scale(0.9);
+    transition: all 0.15s;
+    background-color: #cae3ff;
+  }
 `;
 
 const StyledDiv = styled.div`

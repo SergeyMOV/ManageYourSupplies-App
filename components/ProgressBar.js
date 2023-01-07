@@ -18,10 +18,10 @@ export default function Progress({
     let text =
       "Are you sure that you want to Reset your Budget with all his Changes?";
     if (window.confirm(text) == true) {
-      setChange(0)
-      setBudget(0)
-      setSavedBudget(0)
-      setSavedChanges(0)
+      setChange(0);
+      setBudget(0);
+      setSavedBudget(0);
+      setSavedChanges(0);
     } else {
       ("");
     }

@@ -22,7 +22,6 @@ export default function Dialog({show, description, confirm, cancel}) {
 
 const Dialogmain = styled.div`
   height: 0em;
-  background-color: #e8f0ff;
   border-radius: 10px 10px;
   width: 60vw;
   .dialog__confirm {

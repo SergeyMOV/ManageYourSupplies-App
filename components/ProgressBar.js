@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import {MdDeleteForever} from "react-icons/md";
 import {RiSave3Fill} from "react-icons/ri";
+import React, {useState} from "react";
+import Dialog from "../components/Dialog";
 
 export default function Progress({
   budget,
@@ -10,18 +12,14 @@ export default function Progress({
   setSavedBudget,
   setSavedChanges,
 }) {
+  const [showAlert, setShowAlert] = useState(false);
   const percentage =
     budget !== 0 ? Math.round(((budget + change) / budget) * 100) : 0;
   const spendings = budget + change;
 
   function resetClick() {
-    let text =
-      "Are you sure that you want to Reset your Budget with all his Changes?";
-    if (window.confirm(text) == true) {
-      setChange(0);
-      setBudget(0);
-      setSavedBudget(0);
-      setSavedChanges(0);
+    if (spendings) {
+      setShowAlert(true);
     } else {
       ("");
     }
@@ -30,6 +28,17 @@ export default function Progress({
     setSavedBudget(budget);
     setSavedChanges(change);
   }
+
+  const confirm = () => {
+    setShowAlert(false);
+    setChange(0);
+    setBudget(0);
+    setSavedBudget(0);
+    setSavedChanges(0);
+  };
+  const cancel = () => {
+    setShowAlert(false);
+  };
 
   return (
     <Progressmain className="progressmain">
@@ -50,6 +59,13 @@ export default function Progress({
           </ButtonContainer>
         </StyledDiv>
       </ProgressbarContainer>
+      <Dialog
+        show={showAlert}
+        title=""
+        description="Are you sure that you want to Reset your Budget & its All Changes?"
+        cancel={cancel}
+        confirm={confirm}
+      />
     </Progressmain>
   );
 }

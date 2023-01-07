@@ -5,7 +5,11 @@ export default function Entryfield({budget, setBudget}) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setBudget(Number(currentValue));
+    if (currentValue < 10) {
+      setCurrentValue("");
+    } else {
+      setBudget(Number(currentValue));
+    }
   }
 
   return (

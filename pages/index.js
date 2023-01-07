@@ -51,4 +51,5 @@ export default function Home() {
 
 const Homepage = styled.div`
   border: none;
+  background-color: #cae3ff; ;
 `;

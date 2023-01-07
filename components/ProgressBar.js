@@ -15,10 +15,16 @@ export default function Progress({
   const spendings = budget + change;
 
   function resetClick() {
-    setChange(0);
-    setBudget(0);
-    setSavedBudget(0);
-    setSavedChanges(0);
+    let text =
+      "Are you sure that you want to Reset your Budget with all his Changes?";
+    if (confirm(text) == true) {
+      setChange(0);
+      setBudget(0);
+      setSavedBudget(0);
+      setSavedChanges(0);
+    } else {
+      ("");
+    }
   }
   function handleSave() {
     setSavedBudget(budget);
@@ -57,7 +63,6 @@ const Progressmain = styled.div`
   width: 55%;
   top: -11em;
   margin: 0 auto;
-  height: 50vh;
 `;
 
 const ButtonContainer = styled.div`
@@ -80,7 +85,7 @@ const ProgressbarContainer = styled.div`
   width: 50%;
   border: 8px solid #4358ff;
   border-radius: 47px 47px;
-  height: 94%;
+  height: 20em;
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;

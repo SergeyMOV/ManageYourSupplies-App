@@ -24,7 +24,7 @@ const Valuefields = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height:17vh;
+  height: 17vh;
   p {
     border-bottom: 1px solid;
     width: 12.8em;

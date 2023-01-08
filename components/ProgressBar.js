@@ -62,7 +62,7 @@ export default function Progress({
       <Dialog
         show={showAlert}
         title=""
-        description="Are you sure that you want to Reset your Budget and its All Changes to 0?"
+        description="Are you sure that you want to Delete your Budget and its Changes from all Fields in this Page?"
         cancel={cancel}
         confirm={confirm}
       />

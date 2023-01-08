@@ -94,10 +94,6 @@ const Buttonsection = styled.section`
     border-radius: 6px;
     margin-top: 1em;
     font-family: "JetBrains Mono", monospace;
-    user-select: none;
-    -webkit-user-select: none;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
     :focus {
       border: none;
       outline: none;

@@ -17,6 +17,7 @@ const Head = styled(Image)`
 `;
 const Img = styled(Image)`
   background-color: #cae3ff;
+  
 `;
 const Header1 = styled.header`
   display: flex;

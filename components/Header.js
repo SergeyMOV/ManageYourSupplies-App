@@ -7,14 +7,10 @@ export default function Header() {
     <Header1>
       <Head
         src={ManageYourSupplies}
-        width="120"
-        height="100"
         alt={"ManageYourSupplies"}
       ></Head>
       <Img
         src={ManageYourSuppliesTitle}
-        width="auto"
-        height="auto"
         alt={"ManageYourSuppliesTitle"}
       />
     </Header1>
@@ -22,7 +18,8 @@ export default function Header() {
 }
 
 const Head = styled(Image)`
-  height: 10em;
+  width:8em;
+  height:auto;
 `;
 const Img = styled(Image)`
   background-color: #cae3ff;

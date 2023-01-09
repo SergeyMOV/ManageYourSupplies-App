@@ -5,24 +5,15 @@ import ManageYourSuppliesTitle from "../public/Images/ManageYourSupplies_wording
 export default function Header() {
   return (
     <Header1>
-      <Head
-        src={ManageYourSupplies}
-        width="120"
-        height="100"
-        alt={"ManageYourSupplies"}
-      ></Head>
-      <Img
-        src={ManageYourSuppliesTitle}
-        width="auto"
-        height="auto"
-        alt={"ManageYourSuppliesTitle"}
-      />
+      <Head src={ManageYourSupplies} alt={"ManageYourSupplies"}></Head>
+      <Img src={ManageYourSuppliesTitle} alt={"ManageYourSuppliesTitle"} />
     </Header1>
   );
 }
 
 const Head = styled(Image)`
-  height: 10em;
+  width: 8em;
+  height: auto;
 `;
 const Img = styled(Image)`
   background-color: #cae3ff;

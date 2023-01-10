@@ -77,7 +77,7 @@ const Progressmain = styled.div`
   align-items: center;
   justify-content: center;
   width: 55%;
-  top: -11em;
+  top: -14em;
   margin: 0 auto;
 `;
 

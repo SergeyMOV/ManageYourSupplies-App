@@ -57,15 +57,16 @@ export default function InOutputFields({
             setSavedChanges(savedChanges - manuelamount);
           }}
         >
-          <AiFillMinusCircle fontSize="1.7em" color="#DE501D" />
+          <AiFillMinusCircle fontSize="1.8em" color="#DE501D" />
         </button>
         <button
           onClick={() => {
             setChange(change + manuelamount);
             setSavedChanges(savedChanges + manuelamount);
           }}
+          style={{marginLeft: "0.5em"}}
         >
-          <RiAddCircleFill fontSize="1.7em" color="#1128A8" />
+          <RiAddCircleFill fontSize="1.8em" color="#1128A8" />
         </button>
       </Manuelmain>
     </Buttonsection>
@@ -76,9 +77,9 @@ const Buttonsection = styled.section`
   width: 15%;
   display: flex;
   flex-direction: column;
-  height: 8em;
   justify-content: center;
   button {
+    height: 1.8em;
     width: 4.8em;
     background-image: radial-gradient(
       100% 100% at 100% 0,
@@ -122,6 +123,7 @@ const Manuelmain = styled.section`
   z-index: 1;
   button {
     background: none;
+    height: auto;
     border-radius: 5px 5px 5px 5px;
     padding: 0;
     width: 2.3em;

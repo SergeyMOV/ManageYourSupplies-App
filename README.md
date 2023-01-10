@@ -13,3 +13,8 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 
 
 # Tech Stack
+- React
+
+- React Hooks
+
+- Props

@@ -13,7 +13,7 @@ export default function Valueinfofields({budget, change}) {
         <span>€</span>
       </p>
       <p>
-        Current Budget &nbsp;= <span>{budget + change}</span>
+        Current Budget &nbsp;= <span>{budget ? budget + change : 0}</span>
         <span>€</span>
       </p>
     </Valuefields>
@@ -24,7 +24,6 @@ const Valuefields = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 17vh;
   p {
     border-bottom: 1px solid;
     width: 12.8em;

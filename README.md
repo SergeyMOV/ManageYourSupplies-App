@@ -18,7 +18,7 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 - Props
 - React Dialog Box
 - Styled Components
-# Setup
+#  Setup
 1.Clone this repository.
 <br>
 2.Install npm dependencies with npm install.

@@ -18,3 +18,13 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 - Props
 - React Dialog Box
 - Styled Components
+# Setup
+1.Clone this repository.
+<br>
+2.Install npm dependencies with npm install.
+<br>
+3.To run the app in development mode npm run dev, then open http://localhost:3000 to view it in the browser.
+<br>
+4.To run unit and component tests: npm test.
+<br>
+5.To create a build ready for deploying: npm run build.

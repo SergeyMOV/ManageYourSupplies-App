@@ -20,7 +20,7 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 - Styled Components
 #  Setup
 
-On Mac
+<h3>on Mac</h3>
 1.Clone this repository.
 <br>
 2.Install npm dependencies with npm install.
@@ -31,8 +31,8 @@ On Mac
 <br>
 5.To create a build ready for deploying: npm run build.
 
-on Windows
-1.open the Website https://git-scm.com/downloads,download and install Git for Windows.
+<h3>on Windows</h3>
+1.open the Website https://git-scm.com/downloads, download and install Git for Windows.
 <br>
 2.open the Website https://nodejs.org/en/download/, download and install nodejs for Windows.
 <br>
@@ -43,4 +43,6 @@ on Windows
 5.To create a build ready for deploying: npm run build.
 <br>
 6.To run unit and component tests: npm test.
+<br>
+7.To run the app in development mode npm run dev, then open http://localhost:3000 to view it in the browser.
 

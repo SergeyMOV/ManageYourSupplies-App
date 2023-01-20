@@ -19,6 +19,8 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 - React Dialog Box
 - Styled Components
 #  Setup
+
+On Mac
 1.Clone this repository.
 <br>
 2.Install npm dependencies with npm install.
@@ -28,3 +30,17 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 4.To run unit and component tests: npm test.
 <br>
 5.To create a build ready for deploying: npm run build.
+
+on Windows
+1.open the Website https://git-scm.com/downloads,download and install Git for Windows.
+<br>
+2.open the Website https://nodejs.org/en/download/, download and install nodejs for Windows.
+<br>
+3.Install npm dependencies with npm install on Powershell
+<br>
+4.Clone this repository with https url.
+<br>
+5.To create a build ready for deploying: npm run build.
+<br>
+6.To run unit and component tests: npm test.
+

@@ -38,11 +38,13 @@ The ManageYourSupplies App let you to Control your Locally collected budget, the
 <br>
 3.Install npm dependencies with npm install on Powershell
 <br>
-4.Clone this repository with https url.
+4.Install Next.js in your system with this command npm install next -g
 <br>
-5.To create a build ready for deploying: npm run build.
+5.Clone this repository with https url.
 <br>
-6.To run unit and component tests: npm test.
+6.To create a build ready for deploying: npm run build.
 <br>
-7.To run the app in development mode npm run dev, then open http://localhost:3000 to view it in the browser.
+7.To run unit and component tests: npm test.
+<br>
+8.To run the app in development mode npm run dev, then open http://localhost:3000 to view it in the browser.
 

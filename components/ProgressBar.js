@@ -105,6 +105,22 @@ const ProgressbarContainer = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
+  @media (min-width:480px) and (max-width:768px) {
+    border-radius: 70px 70px;
+    width:40%;
+    }
+  @media (min-width:768px) and (max-width:1280px) {
+  border-radius: 50px 50px;
+  width:25%;
+  border: 8px solid #4358ff;
+  height:25em;
+  }
+  @media (min-width:1024px) and (max-width:1780px){
+    border-radius: 100px 100px;
+    width:25%;
+    border: 8px solid #4358ff;
+    height:25em;
+  }
 `;
 
 const Progressbar = styled.div`
@@ -121,6 +137,9 @@ const Progressbar = styled.div`
   );
   transition: 0.5s linear;
   ${props => `height: ${props.value}%;`}
+  @media (min-width:1024px) and (max-width:1780px){
+    border-radius:9px;
+  }
 `;
 const Restorebutton = styled.button`
   font-size: 1.5em;

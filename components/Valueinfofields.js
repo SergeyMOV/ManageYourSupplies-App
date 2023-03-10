@@ -4,15 +4,18 @@ export default function Valueinfofields({budget, change}) {
   return (
     <Valuefields>
       <p>
-        Initial Budget &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;<span data-testid="test">{budget}</span>
+        Initial Budget &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;
+        <span data-testid="test">{budget}</span>
         <span>€</span>
       </p>
       <p>
-        Expenditures &nbsp;&nbsp;&nbsp; &nbsp;=&nbsp;&nbsp; <span>{change}</span>
+        Expenditures &nbsp;&nbsp;&nbsp; &nbsp;=&nbsp;&nbsp;{" "}
+        <span>{change}</span>
         <span>€</span>
       </p>
       <p>
-        Current Budget &nbsp;=&nbsp;&nbsp; <span>{budget ? budget + change : 0}</span>
+        Current Budget &nbsp;=&nbsp;&nbsp;{" "}
+        <span>{budget ? budget + change : 0}</span>
         <span>€</span>
       </p>
     </Valuefields>

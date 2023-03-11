@@ -27,11 +27,14 @@ const Dialogmain = styled.div`
   background: #e8f0ff;
   border-radius: 10px 10px;
   width: 60vw;
-  @media (min-width: 768px) and (max-width: 1280px) {
-    width: 60%;
+  @media (min-width: 480px) and (max-width: 768px) {
+    max-width: 23em;
   }
-  @media (min-width: 1024px) and (max-width: 2000px) {
-    width: 23vw;
+  @media (min-width: 768px) and (max-width: 1280px) {
+    max-width: 23em;
+  }
+  @media (min-width: 1024px) and (max-width: 3000px) {
+    max-width: 23em;
   }
   .dialog__confirm {
     background-image: radial-gradient(

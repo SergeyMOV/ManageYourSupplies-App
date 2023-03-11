@@ -98,29 +98,29 @@ const ProcentageContainer = styled.div`
 `;
 
 const ProgressbarContainer = styled.div`
-  width: 50%;
+  width: 7em;
   border: 8px solid #4358ff;
-  border-radius: 47px 47px;
-  height: 20em;
+  border-radius: 60px;
+  height: 22em;
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
   @media (min-width: 480px) and (max-width: 768px) {
-    border-radius: 70px 70px;
-    width: 37%;
+    border-radius: 60px;
+    max-width: 7em;
     height: 22em;
   }
-  @media (min-width: 768px) and (max-width: 1280px) {
-    border-radius: 60px 60px;
-    width: 30%;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    border-radius: 70px;
+    max-width: 7em;
     border: 8px solid #4358ff;
-    height: 25em;
+    height: 23em;
   }
-  @media (min-width: 1024px) and (max-width: 2000px) {
-    border-radius:124px;
-    width: 18%;
+  @media (min-width: 1024px) and (max-width: 3000px) {
+    border-radius: 50px;
+    max-width: 8em;
     border: 8px solid #4358ff;
-    height: 28em;
+    height: 23em;
   }
 `;
 
@@ -130,7 +130,7 @@ const Progressbar = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 37px 37px;
+  border-radius: 52px;
   background-image: radial-gradient(
     100% 100% at 100% 0,
     #cae3ff 0,
@@ -139,13 +139,13 @@ const Progressbar = styled.div`
   transition: 0.5s linear;
   ${props => `height: ${props.value}%;`}
   @media (min-width: 480px) and (max-width: 768px) {
-    border-radius: 57px;
+    border-radius: 78px;
   }
   @media (min-width: 768px) and (max-width: 1280px) {
-    border-radius: 52px;
+    border-radius: 61px;
   }
   @media (min-width: 1024px) and (max-width: 2000px) {
-    border-radius: 134px;
+    border-radius: 80px;
   }
 `;
 const Restorebutton = styled.button`

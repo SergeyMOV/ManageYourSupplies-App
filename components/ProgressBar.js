@@ -110,7 +110,7 @@ const ProgressbarContainer = styled.div`
     width: 37%;
     height: 25em;
   }
-  @media (min-width: 768px) and (max-width: 1280px) {
+  @media (min-width: 768px) and (max-width: 2000px) {
     border-radius: 60px 60px;
     width: 30%;
     border: 8px solid #4358ff;

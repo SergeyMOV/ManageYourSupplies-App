@@ -30,7 +30,7 @@ const Dialogmain = styled.div`
   @media (min-width: 768px) and (max-width: 1280px) {
     width: 60%;
   }
-  @media (min-width: 1024px) and (max-width: 1780px) {
+  @media (min-width: 1024px) and (max-width: 2000px) {
     width: 23vw;
   }
   .dialog__confirm {

@@ -108,19 +108,19 @@ const ProgressbarContainer = styled.div`
   @media (min-width: 480px) and (max-width: 768px) {
     border-radius: 70px 70px;
     width: 37%;
-    height: 25em;
+    height: 22em;
   }
-  @media (min-width: 768px) and (max-width: 2000px) {
+  @media (min-width: 768px) and (max-width: 1280px) {
     border-radius: 60px 60px;
     width: 30%;
     border: 8px solid #4358ff;
     height: 25em;
   }
-  @media (min-width: 1024px) and (max-width: 1780px) {
-    border-radius: 100px 100px;
+  @media (min-width: 1024px) and (max-width: 2000px) {
+    border-radius:124px;
     width: 18%;
     border: 8px solid #4358ff;
-    height: 25em;
+    height: 28em;
   }
 `;
 
@@ -145,7 +145,7 @@ const Progressbar = styled.div`
     border-radius: 52px;
   }
   @media (min-width: 1024px) and (max-width: 2000px) {
-    border-radius: 91px;
+    border-radius: 134px;
   }
 `;
 const Restorebutton = styled.button`

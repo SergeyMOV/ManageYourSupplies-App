@@ -144,7 +144,7 @@ const Progressbar = styled.div`
   @media (min-width: 768px) and (max-width: 1280px) {
     border-radius: 52px;
   }
-  @media (min-width: 1024px) and (max-width: 1780px) {
+  @media (min-width: 1024px) and (max-width: 2000px) {
     border-radius: 91px;
   }
 `;

@@ -112,13 +112,13 @@ const ProgressbarContainer = styled.div`
   }
   @media (min-width: 768px) and (max-width: 1024px) {
     border-radius: 70px;
-    max-width: 7em;
+    max-width: 8em;
     border: 8px solid #4358ff;
     height: 23em;
   }
   @media (min-width: 1024px) and (max-width: 3000px) {
     border-radius: 50px;
-    max-width: 8em;
+    max-width: 9em;
     border: 8px solid #4358ff;
     height: 23em;
   }
@@ -145,7 +145,7 @@ const Progressbar = styled.div`
     border-radius: 61px;
   }
   @media (min-width: 1024px) and (max-width: 2000px) {
-    border-radius: 80px;
+    border-radius: 60px;
   }
 `;
 const Restorebutton = styled.button`
